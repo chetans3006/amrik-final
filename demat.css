@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --accent-color: #f59e0b;
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>');
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+.registration-box {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  max-width: 480px;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-xl);
+  position: relative;
+  z-index: 2;
+  animation: slideInUp 0.8s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.registration-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 20px 20px 0 0;
+}
+
+.registration-box h2 {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.registration-box h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.registration-box input,
+.registration-box textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.registration-box input:focus,
+.registration-box textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
+}
+
+.registration-box input:valid,
+.registration-box textarea:valid {
+  border-color: var(--success-color);
+}
+
+.registration-box input::placeholder,
+.registration-box textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.registration-box textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-button {
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.submit-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: var(--transition);
+}
+
+.submit-button:hover::before {
+  left: 100%;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.form-footer p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.form-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.form-footer a:hover {
+  text-decoration: underline;
+}
+
+.security-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: var(--border-radius);
+  color: var(--success-color);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.security-badge::before {
+  content: "🔒";
+  font-size: 1rem;
+}
+
+/* Input validation styles */
+.form-group.error input,
+.form-group.error textarea {
+  border-color: var(--error-color);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-group.success input,
+.form-group.success textarea {
+  border-color: var(--success-color);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.form-group.error .error-message {
+  display: block;
+}
+
+/* Loading state */
+.submit-button.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.submit-button.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .registration-box {
+    padding: 2rem;
+    max-width: 100%;
+  }
+
+  .registration-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .registration-box input,
+  .registration-box textarea {
+    padding: 0.875rem;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .registration-box {
+    padding: 1.5rem;
+  }
+
+  .registration-box h2 {
+    font-size: 1.3rem;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+  }
+}
+
+/* Focus visible for accessibility */
+.registration-box input:focus-visible,
+.registration-box textarea:focus-visible,
+.submit-button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}

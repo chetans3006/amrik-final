@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Dashboard - My Courses</title>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Header -->
+      <header class="dashboard-header">
+        <div class="header-content">
+          <div class="logo-section">
+            <div class="logo">📚</div>
+            <h1>Learning Hub</h1>
+          </div>
+          <div class="user-section">
+            <div class="user-info">
+              <span class="welcome-text"
+                >Welcome back, <span id="userName">User</span>!</span
+              >
+              <div class="user-role" id="userRole">Student</div>
+            </div>
+            <div class="user-actions">
+              <button class="profile-btn" id="profileBtn">👤</button>
+              <button class="logout-btn" id="logoutBtn">Logout</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="dashboard-main">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <nav class="sidebar-nav">
+            <ul class="nav-list">
+              <li class="nav-item active">
+                <a href="#" data-section="videos" class="nav-link">
+                  🎥 My Videos
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" data-section="progress" class="nav-link">
+                  📊 Progress
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" data-section="favorites" class="nav-link">
+                  ⭐ Favorites
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" data-section="certificates" class="nav-link">
+                  🏆 Certificates
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" data-section="settings" class="nav-link">
+                  ⚙️ Settings
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- Content Area -->
+        <div class="content-area">
+          <!-- Videos Section -->
+          <section id="videos-section" class="content-section active">
+            <div class="section-header">
+              <h2>My Learning Videos</h2>
+              <div class="section-actions">
+                <div class="search-box">
+                  <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search videos..."
+                    class="search-input"
+                  />
+                  <button class="search-btn">🔍</button>
+                </div>
+                <select id="categoryFilter" class="filter-select">
+                  <option value="all">All Categories</option>
+                  <option value="programming">Programming</option>
+                  <option value="design">Design</option>
+                  <option value="business">Business</option>
+                  <option value="language">Language</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Video Grid -->
+            <div class="video-grid" id="videoGrid">
+              <!-- Videos will be populated by JavaScript -->
+            </div>
+          </section>
+
+          <!-- Progress Section -->
+          <section id="progress-section" class="content-section">
+            <div class="section-header">
+              <h2>Learning Progress</h2>
+            </div>
+            <div class="progress-overview">
+              <div class="progress-card">
+                <h3>Overall Progress</h3>
+                <div class="progress-bar">
+                  <div class="progress-fill" style="width: 68%"></div>
+                </div>
+                <span class="progress-text">68% Complete</span>
+              </div>
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <div class="stat-number">24</div>
+                  <div class="stat-label">Videos Watched</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">156</div>
+                  <div class="stat-label">Hours Learned</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">8</div>
+                  <div class="stat-label">Courses Completed</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Favorites Section -->
+          <section id="favorites-section" class="content-section">
+            <div class="section-header">
+              <h2>Favorite Videos</h2>
+            </div>
+            <div class="favorites-grid" id="favoritesGrid">
+              <!-- Favorite videos will be populated here -->
+            </div>
+          </section>
+
+          <!-- Certificates Section -->
+          <section id="certificates-section" class="content-section">
+            <div class="section-header">
+              <h2>My Certificates</h2>
+            </div>
+            <div class="certificates-grid">
+              <div class="certificate-card">
+                <div class="certificate-icon">🏆</div>
+                <h3>JavaScript Fundamentals</h3>
+                <p>Completed on March 15, 2024</p>
+                <button class="download-btn">Download PDF</button>
+              </div>
+              <div class="certificate-card">
+                <div class="certificate-icon">🎨</div>
+                <h3>UI/UX Design Basics</h3>
+                <p>Completed on February 28, 2024</p>
+                <button class="download-btn">Download PDF</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Settings Section -->
+          <section id="settings-section" class="content-section">
+            <div class="section-header">
+              <h2>Settings</h2>
+            </div>
+            <div class="settings-form">
+              <div class="setting-group">
+                <label>Video Quality</label>
+                <select class="setting-select">
+                  <option value="auto">Auto</option>
+                  <option value="1080p">1080p</option>
+                  <option value="720p">720p</option>
+                  <option value="480p">480p</option>
+                </select>
+              </div>
+              <div class="setting-group">
+                <label>Autoplay Next Video</label>
+                <label class="toggle-switch">
+                  <input type="checkbox" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="setting-group">
+                <label>Email Notifications</label>
+                <label class="toggle-switch">
+                  <input type="checkbox" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div id="videoModal" class="video-modal">
+      <div class="video-modal-content">
+        <div class="video-modal-header">
+          <h3 id="modalVideoTitle">Video Title</h3>
+          <button class="modal-close" id="closeVideoModal">&times;</button>
+        </div>
+        <div class="video-player-container">
+          <video id="videoPlayer" controls width="100%" height="400">
+            <source src="" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="video-modal-info">
+          <div class="video-description" id="modalVideoDescription">
+            Video description will appear here...
+          </div>
+          <div class="video-actions">
+            <button class="action-btn favorite-btn" id="favoriteBtn">
+              ⭐ Add to Favorites
+            </button>
+            <button class="action-btn download-btn" id="downloadBtn">
+              ⬇️ Download
+            </button>
+            <button class="action-btn share-btn" id="shareBtn">📤 Share</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background-animation">
+      <div class="floating-element element-1"></div>
+      <div class="floating-element element-2"></div>
+      <div class="floating-element element-3"></div>
+      <div class="floating-element element-4"></div>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-card">
+        <div class="contact-header">
+          <h1>Get In Touch</h1>
+          <p>
+            We'd love to hear from you. Send us a message and we'll respond as
+            soon as possible.
+          </p>
+        </div>
+
+        <form
+          action="https://formspree.io/f/mgvarwjo"
+          method="POST"
+          class="contact-form"
+        >
+          <div class="form-row">
+            <div class="input-group">
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder=" "
+                  id="name"
+                />
+                <label for="name">Your Name</label>
+                <div class="input-border"></div>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <div class="input-wrapper">
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder=" "
+                  id="email"
+                />
+                <label for="email">Email Address</label>
+                <div class="input-border"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div class="input-wrapper">
+              <textarea
+                name="message"
+                required
+                placeholder=" "
+                id="message"
+                rows="6"
+              ></textarea>
+              <label for="message">Your Message</label>
+              <div class="input-border"></div>
+            </div>
+          </div>
+
+          <div class="submit-section">
+            <button type="submit" class="submit-button">
+              <span class="button-text">Send Message</span>
+              <div class="button-bg"></div>
+              <div class="button-ripple"></div>
+            </button>
+          </div>
+        </form>
+
+        <div class="contact-info">
+          <div class="info-item">
+            <div class="info-icon">📧</div>
+            <span>amriksuman7@gmail.com</span>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📱</div>
+            <span>+91 8528624309</span>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <span>Rahon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="form.js"></script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-container {
+  background: white;
+  padding: 60px 50px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  max-width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+  transform: scale(1.01);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  color: #333;
+  font-size: 32px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 18px;
+  transition: 0.3s;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  background: #4caf50;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #45a049;
+  transform: translateY(-2px);
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 16px;
+  margin-bottom: 20px;
+  display: none;
+  animation: fadeInError 0.3s ease-in-out;
+}
+
+@keyframes fadeInError {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+      135deg,
+      rgba(116, 235, 213, 0.6),
+      rgba(172, 182, 229, 0.6)
+    ),
+    url("login.jpg") no-repeat center center/cover;
+  animation: backgroundZoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes backgroundZoom {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 110%;
+  }
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Login - Password Authentication</title>
+    <link rel="stylesheet" href="pass.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-card">
+        <div class="login-header">
+          <div class="logo">
+            <div class="lock-icon">🔒</div>
+          </div>
+          <h1>Secure Login</h1>
+          <p>Enter your credentials to access your account</p>
+        </div>
+
+        <!-- Alert Messages -->
+        <div id="alertContainer" class="alert-container"></div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="login-form" novalidate>
+          <div class="form-group">
+            <label for="username" class="form-label">
+              Username or Email
+              <span class="required">*</span>
+            </label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="username"
+                name="username"
+                class="form-input"
+                placeholder="Enter your username or email"
+                required
+                autocomplete="username"
+                aria-describedby="username-error"
+              />
+              <span class="input-icon">👤</span>
+            </div>
+            <div id="username-error" class="error-message" role="alert"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="form-label">
+              Password
+              <span class="required">*</span>
+            </label>
+            <div class="input-wrapper password-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-input"
+                placeholder="Enter your password"
+                required
+                autocomplete="current-password"
+                aria-describedby="password-error"
+              />
+              <button
+                type="button"
+                id="togglePassword"
+                class="password-toggle"
+                aria-label="Toggle password visibility"
+              >
+                👁️
+              </button>
+            </div>
+            <div id="password-error" class="error-message" role="alert"></div>
+          </div>
+
+          <div class="form-options">
+            <label class="checkbox-wrapper">
+              <input type="checkbox" id="rememberMe" name="rememberMe" />
+              <span class="checkmark"></span>
+              Remember me
+            </label>
+            <a href="#" id="forgotPasswordLink" class="forgot-link"
+              >Forgot Password?</a
+            >
+          </div>
+
+          <button type="submit" id="loginButton" class="login-btn">
+            <span class="btn-text">Sign In</span>
+            <span class="btn-loader" style="display: none">
+              <div class="spinner"></div>
+            </span>
+          </button>
+        </form>
+
+        <!-- Additional Options -->
+        <div class="divider">
+          <span>or</span>
+        </div>
+
+        <div class="social-login">
+          <button type="button" class="social-btn google-btn" id="googleLogin">
+            <span class="social-icon">🔍</span>
+            Continue with Google
+          </button>
+          <button type="button" class="social-btn github-btn" id="githubLogin">
+            <span class="social-icon">⚡</span>
+            Continue with GitHub
+          </button>
+        </div>
+
+        <div class="signup-section">
+          <p>
+            Don't have an account?
+            <a href="#" id="signupLink" class="signup-link">Create one here</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Demo Info 
+      <div class="demo-info">
+        <h3>Demo Credentials</h3>
+        <p><strong>Username:</strong> demo@example.com</p>
+        <p><strong>Password:</strong> password123</p>
+        <p><em>Try "admin" + "admin123" for admin access</em></p>
+      </div>
+    </div>-->
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Reset Password</h2>
+          <button type="button" class="modal-close" id="closeModal">
+            &times;
+          </button>
+        </div>
+        <form id="forgotPasswordForm">
+          <div class="form-group">
+            <label for="resetEmail" class="form-label">Email Address</label>
+            <input
+              type="email"
+              id="resetEmail"
+              class="form-input"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+          <button type="submit" class="login-btn">Send Reset Link</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="pass.js"></script>
+  </body>
+</html>
