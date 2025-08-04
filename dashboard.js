@@ -53,14 +53,14 @@ class LearningDashboard {
     this.videos = [
       {
         id: 1,
-        title: "JavaScript Fundamentals",
+        title: "trading demo",
         description:
-          "Learn the basics of JavaScript programming including variables, functions, and control structures.",
-        category: "programming",
-        duration: "45:30",
-        thumbnail: "",
-        videoUrl: "wood.mp4",
-        instructor: "John Smith",
+          "demo videos on trading strategies, market analysis, and risk management.",
+        category: "trading",
+        duration: "10:00",
+        thumbnail: "📈",
+        videoUrl: "demo.mp4",
+        instructor: "bunty",
         views: 1250,
         rating: 4.8,
       },
