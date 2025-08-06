@@ -379,15 +379,22 @@ async function handleForgotPassword(event) {
 
 // Social Login Functions
 function handleSocialLogin(provider) {
-  showAlert(
-    `${
-      provider.charAt(0).toUpperCase() + provider.slice(1)
-    } login would be implemented here`,
-    "info"
-  );
-
-  // In a real app, this would redirect to the OAuth provider
-  console.log(`Initiating ${provider} OAuth flow...`);
+  if (provider === "google") {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    firebase
+      .auth()
+      .signInWithPopup(provider)
+      .then((result) => {
+        const user = result.user;
+        showAlert(`Welcome, ${user.displayName}`, "success");
+        console.log("Google user:", user);
+      })
+      .catch((error) => {
+        showAlert("Google Sign-In failed: " + error.message, "error");
+      });
+  } else {
+    showAlert("Only Google login is supported now.", "info");
+  }
 }
 
 function handleSignupClick(event) {

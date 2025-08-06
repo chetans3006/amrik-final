@@ -100,10 +100,7 @@
             <span class="social-icon">🔍</span>
             Continue with Google
           </button>
-          <button type="button" class="social-btn github-btn" id="githubLogin">
-            <span class="social-icon">⚡</span>
-            Continue with GitHub
-          </button>
+         
         </div>
 
         <div class="signup-section">
@@ -147,6 +144,25 @@
         </form>
       </div>
     </div>
+<!-- Firebase Core -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+<script>
+  // Your Firebase Config (replace with your own)
+ const firebaseConfig = {
+  apiKey: "AIzaSyARlRNBcMKPLHzINax0tJTDaWHqiNrGgPk",
+  authDomain: "amrik-suman.firebaseapp.com",
+  projectId: "amrik-suman",
+  storageBucket: "amrik-suman.firebasestorage.app",
+  messagingSenderId: "831414046355",
+  appId: "1:831414046355:web:9b3356ceda13f60e394766",
+  measurementId: "G-S5SFZRQDBK"
+};
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 
     <script src="pass.js"></script>
   </body>
