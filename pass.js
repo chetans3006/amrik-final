@@ -386,8 +386,23 @@ function handleSocialLogin(provider) {
       .signInWithPopup(provider)
       .then((result) => {
         const user = result.user;
+
         showAlert(`Welcome, ${user.displayName}`, "success");
-        console.log("Google user:", user);
+
+        // Optional: Save user info to sessionStorage
+        sessionStorage.setItem(
+          "user",
+          JSON.stringify({
+            name: user.displayName,
+            email: user.email,
+            photo: user.photoURL,
+          })
+        );
+
+        // Redirect to dashboard after short delay
+        setTimeout(() => {
+          window.location.href = "dashboard.html";
+        }, 1500);
       })
       .catch((error) => {
         showAlert("Google Sign-In failed: " + error.message, "error");
